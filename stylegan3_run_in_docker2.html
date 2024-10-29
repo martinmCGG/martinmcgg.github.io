@@ -1660,5 +1660,503 @@ Self CPU time total: 3.555s
 2024-10-29T15:02:42+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan3-r-afhqv2-512x512.pkl min/mean/median/max rate: 5.42 7.38 7.41 7.46 it/s
 2024-10-29T15:03:01+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan3-t-afhqv2-512x512.pkl min/mean/median/max rate: 6.75 9.93 10.05 10.08 it/s
 2024-10-29T15:03:17+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan2-afhqv2-512x512.pkl min/mean/median/max rate: 15.09 26.77 27.44 27.76 it/s
-(base) root@6945826450c4:/stylegan3# 
+(base) root@6945826450c4:/stylegan3# # let's download the fresh repository to ensure we get the same speed as with the local copy
+(base) root@6945826450c4:/stylegan3# cd /tmp
+(base) root@6945826450c4:/tmp# git clone https://github.com/martinmCGG/stylegan3
+Cloning into &apos;stylegan3&apos;...
+remote: Enumerating objects: 1078, done.
+remote: Counting objects: 100% (874/874), done.
+remote: Compressing objects: 100% (289/289), done.
+remote: Total 1078 (delta 637), reused 792 (delta 573), pack-reused 204 (from 1)
+Receiving objects: 100% (1078/1078), 4.66 MiB | 16.13 MiB/s, done.
+Resolving deltas: 100% (735/735), done.
+(base) root@6945826450c4:/tmp# cd stylegan3/
+(base) root@6945826450c4:/tmp/stylegan3# git checkout debug_profiling
+Branch &apos;debug_profiling&apos; set up to track remote branch &apos;debug_profiling&apos; from &apos;origin&apos;.
+Switched to a new branch &apos;debug_profiling&apos;
+(base) root@6945826450c4:/tmp/stylegan3# ./bench3.sh 
++ echo BENCH3
+BENCH3
++ &apos;[&apos; 0 -lt 1 &apos;]&apos;
++ CONDA_DIR=/root/miniconda3
++ ENVNAME=stylegan3
++ source /opt/intel/oneapi/mkl/2024.2/env/vars.sh
+++ _vars_this_script_name=vars.sh
++++ _vars_get_proc_name ./bench3.sh
++++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++++ script=./bench3.sh
++++ &apos;[&apos; -L ./bench3.sh &apos;]&apos;
++++ basename -- ./bench3.sh
+++ &apos;[&apos; vars.sh = bench3.sh &apos;]&apos;
+++ vars_script_name=
++++ ps -p 26398 -o comm=
+++ vars_script_shell=bench3.sh
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;5.1.16(1)-release&apos; &apos;]&apos;
+++ return 0
+++ vars_script_name=/opt/intel/oneapi/mkl/2024.2/env/vars.sh
+++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/env/vars.sh &apos;]&apos;
++++ basename -- /opt/intel/oneapi/mkl/2024.2/env/vars.sh
+++ my_script_name=vars.sh
++++ get_script_path /opt/intel/oneapi/mkl/2024.2/env/vars.sh
++++ script=/opt/intel/oneapi/mkl/2024.2/env/vars.sh
++++ &apos;[&apos; -L /opt/intel/oneapi/mkl/2024.2/env/vars.sh &apos;]&apos;
+++++ command dirname -- /opt/intel/oneapi/mkl/2024.2/env/vars.sh
++++ script_dir=/opt/intel/oneapi/mkl/2024.2/env
+++++ cd /opt/intel/oneapi/mkl/2024.2/env
+++++ command pwd -P
++++ script_dir=/opt/intel/oneapi/mkl/2024.2/env
++++ printf %s /opt/intel/oneapi/mkl/2024.2/env
+++ my_script_path=/opt/intel/oneapi/mkl/2024.2/env
++++ dirname -- /opt/intel/oneapi/mkl/2024.2/env
+++ MKLROOT=/opt/intel/oneapi/mkl/2024.2
+++ export MKLROOT
+++ __mkl_tmp_SCRIPT_NAME=vars.sh
+++ __mkl_tmp_MOD_NAME=mod
+++ __mkl_tmp_TARGET_ARCH=intel64
+++ __mkl_tmp_LP64_ILP64=
+++ __mkl_tmp_MOD=
+++ __mkl_tmp_MKLVARS_VERBOSE=
+++ __mkl_help=
+++ &apos;[&apos; -z &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; intel64 &apos;!=&apos; ia32 &apos;]&apos;
+++ &apos;[&apos; intel64 &apos;!=&apos; intel64 &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -z &apos;&apos; &apos;]&apos;
+++ __mkl_lib_dir=/opt/intel/oneapi/mkl/2024.2/lib
+++ __cpath=/opt/intel/oneapi/mkl/2024.2/include
+++ __mkl_bin_dir=/opt/intel/oneapi/mkl/2024.2/bin
+++ __nlspath=/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N
+++ __ld_library_path=/opt/intel/oneapi/mkl/2024.2/lib
+++ __library_path=/opt/intel/oneapi/mkl/2024.2/lib/
+++ __path=/opt/intel/oneapi/mkl/2024.2/bin/
+++ &apos;[&apos; &apos;&apos; = mod &apos;]&apos;
+++ export LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib:
+++ LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib:
+++ export LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/:
+++ LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/:
+++ export NLSPATH=/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
+++ NLSPATH=/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
+++ export CPATH=/opt/intel/oneapi/mkl/2024.2/include:
+++ CPATH=/opt/intel/oneapi/mkl/2024.2/include:
+++ export PATH=/opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PKG_CONFIG_PATH=/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ PKG_CONFIG_PATH=/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ export CMAKE_PREFIX_PATH=/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ CMAKE_PREFIX_PATH=/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ &apos;[&apos; &apos;&apos; = verbose &apos;]&apos;
++ source /opt/intel/oneapi/compiler/2024.2/env/vars.sh
+++ _vars_this_script_name=vars.sh
++++ _vars_get_proc_name ./bench3.sh
++++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++++ script=./bench3.sh
++++ &apos;[&apos; -L ./bench3.sh &apos;]&apos;
++++ basename -- ./bench3.sh
+++ &apos;[&apos; vars.sh = bench3.sh &apos;]&apos;
+++ vars_script_name=
++++ ps -p 26398 -o comm=
+++ vars_script_shell=bench3.sh
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;5.1.16(1)-release&apos; &apos;]&apos;
+++ return 0
+++ vars_script_name=/opt/intel/oneapi/compiler/2024.2/env/vars.sh
+++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2/env/vars.sh &apos;]&apos;
++++ get_script_path /opt/intel/oneapi/compiler/2024.2/env/vars.sh
++++ script=/opt/intel/oneapi/compiler/2024.2/env/vars.sh
++++ &apos;[&apos; -L /opt/intel/oneapi/compiler/2024.2/env/vars.sh &apos;]&apos;
+++++ command dirname -- /opt/intel/oneapi/compiler/2024.2/env/vars.sh
++++ script_dir=/opt/intel/oneapi/compiler/2024.2/env
+++++ cd /opt/intel/oneapi/compiler/2024.2/env
+++++ command pwd -P
++++ script_dir=/opt/intel/oneapi/compiler/2024.2/env
++++ printf %s /opt/intel/oneapi/compiler/2024.2/env
+++ my_script_path=/opt/intel/oneapi/compiler/2024.2/env
++++ dirname -- /opt/intel/oneapi/compiler/2024.2/env
+++ component_root=/opt/intel/oneapi/compiler/2024.2
+++ CMPLR_ROOT=/opt/intel/oneapi/compiler/2024.2
+++ export CMPLR_ROOT
+++ INTEL_TARGET_ARCH=intel64
+++ USE_INTEL_LLVM=0
+++ &apos;[&apos; 0 -gt 0 &apos;]&apos;
+++ &apos;[&apos; intel64 = ia32 &apos;]&apos;
+++ unset INTEL_TARGET_ARCH_IA32
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/bin /opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/bin
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin/:/root/miniconda3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ &apos;[&apos; 0 = 1 &apos;]&apos;
+++ &apos;[&apos; intel64 = ia32 &apos;]&apos;
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/lib /opt/intel/oneapi/mkl/2024.2/lib/:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/lib
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/lib/:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/lib/: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
+++ LIBRARY_PATH=/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
+++ export LIBRARY_PATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/lib /opt/intel/oneapi/mkl/2024.2/lib:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/lib
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/lib:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/lib: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ LD_LIBRARY_PATH=/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ export LD_LIBRARY_PATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/opt/compiler/lib /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/opt/compiler/lib
++++ path_is_now=/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ LD_LIBRARY_PATH=/opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ export LD_LIBRARY_PATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/lib/pkgconfig /opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/lib/pkgconfig
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/lib/pkgconfig: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ PKG_CONFIG_PATH=/opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ export PKG_CONFIG_PATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/lib/compiler/locale/%l_%t/%N /opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/lib/compiler/locale/%l_%t/%N
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/lib/compiler/locale/%l_%t/%N:/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
+++ NLSPATH=/opt/intel/oneapi/compiler/2024.2/lib/compiler/locale/%l_%t/%N:/opt/intel/oneapi/mkl/2024.2/share/locale/%l_%t/%N:
+++ export NLSPATH
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -f /opt/intel/oneapi/compiler/2024.2/opt/oclfpga/fpgavars.sh &apos;]&apos;
+++ &apos;[&apos; -z &apos;&apos; &apos;]&apos;
+++ OCL_ICD_FILENAMES=/opt/intel/oneapi/compiler/2024.2/lib/libintelocl.so
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ export OCL_ICD_FILENAMES
++++ prepend_manpath /opt/intel/oneapi/compiler/2024.2/share/man &apos;&apos;
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/share/man
++++ path_is_now=
++++ &apos;[&apos; &apos;&apos; = &apos;&apos; &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/share/man:
+++ MANPATH=/opt/intel/oneapi/compiler/2024.2/share/man:
+++ export MANPATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2 /opt/intel/oneapi/mkl/2024.2/lib/cmake:
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/lib/cmake:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/lib/cmake: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ CMAKE_PREFIX_PATH=/opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ export CMAKE_PREFIX_PATH
++++ prepend_path /opt/intel/oneapi/compiler/2024.2/etc/compiler/sys_check/sys_check.sh &apos;&apos;
++++ path_to_add=/opt/intel/oneapi/compiler/2024.2/etc/compiler/sys_check/sys_check.sh
++++ path_is_now=
++++ &apos;[&apos; &apos;&apos; = &apos;&apos; &apos;]&apos;
++++ printf %s /opt/intel/oneapi/compiler/2024.2/etc/compiler/sys_check/sys_check.sh
+++ DIAGUTIL_PATH=/opt/intel/oneapi/compiler/2024.2/etc/compiler/sys_check/sys_check.sh
+++ export DIAGUTIL_PATH
++ source /opt/intel/oneapi/tbb/2021.13/env/vars.sh
+++ _vars_this_script_name=vars.sh
++++ _vars_get_proc_name ./bench3.sh
++++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++++ script=./bench3.sh
++++ &apos;[&apos; -L ./bench3.sh &apos;]&apos;
++++ basename -- ./bench3.sh
+++ &apos;[&apos; vars.sh = bench3.sh &apos;]&apos;
+++ vars_script_name=
++++ ps -p 26398 -o comm=
+++ vars_script_shell=bench3.sh
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ &apos;[&apos; -n &apos;5.1.16(1)-release&apos; &apos;]&apos;
+++ return 0
+++ vars_script_name=/opt/intel/oneapi/tbb/2021.13/env/vars.sh
+++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/tbb/2021.13/env/vars.sh &apos;]&apos;
++++ get_script_path /opt/intel/oneapi/tbb/2021.13/env/vars.sh
++++ script_path=/opt/intel/oneapi/tbb/2021.13/env/vars.sh
++++ &apos;[&apos; -L /opt/intel/oneapi/tbb/2021.13/env/vars.sh &apos;]&apos;
+++++ command dirname -- /opt/intel/oneapi/tbb/2021.13/env/vars.sh
++++ script_dir=/opt/intel/oneapi/tbb/2021.13/env
+++++ cd /opt/intel/oneapi/tbb/2021.13/env
+++++ command pwd -P
++++ script_dir=/opt/intel/oneapi/tbb/2021.13/env
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env
+++ TBBROOT=/opt/intel/oneapi/tbb/2021.13/env/..
+++ TBB_TARGET_ARCH=intel64
+++ TBB_ARCH_SUFFIX=
+++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
+++ TBB_LIB_NAME=libtbb.so.12
+++ &apos;[&apos; -e /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64 &apos;]&apos;
+++ TBB_LIB_DIR=intel64/gcc4.8
+++ &apos;[&apos; -e /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8/libtbb.so.12 &apos;]&apos;
+++ export TBBROOT
++++ prepend_path /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8 /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
++++ path_to_add=/opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8
++++ path_is_now=/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
+++ LIBRARY_PATH=/opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib/:
+++ export LIBRARY_PATH
++++ prepend_path /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8 /opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
++++ path_to_add=/opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8
++++ path_is_now=/opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ LD_LIBRARY_PATH=/opt/intel/oneapi/tbb/2021.13/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/compiler/2024.2/opt/compiler/lib:/opt/intel/oneapi/compiler/2024.2/lib:/opt/intel/oneapi/mkl/2024.2/lib:
+++ export LD_LIBRARY_PATH
++++ prepend_path /opt/intel/oneapi/tbb/2021.13/env/../include /opt/intel/oneapi/mkl/2024.2/include:
++++ path_to_add=/opt/intel/oneapi/tbb/2021.13/env/../include
++++ path_is_now=/opt/intel/oneapi/mkl/2024.2/include:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/mkl/2024.2/include: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env/../include:/opt/intel/oneapi/mkl/2024.2/include:
+++ CPATH=/opt/intel/oneapi/tbb/2021.13/env/../include:/opt/intel/oneapi/mkl/2024.2/include:
+++ export CPATH
++++ prepend_path /opt/intel/oneapi/tbb/2021.13/env/.. /opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
++++ path_to_add=/opt/intel/oneapi/tbb/2021.13/env/..
++++ path_is_now=/opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env/..:/opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ CMAKE_PREFIX_PATH=/opt/intel/oneapi/tbb/2021.13/env/..:/opt/intel/oneapi/compiler/2024.2:/opt/intel/oneapi/mkl/2024.2/lib/cmake:
+++ export CMAKE_PREFIX_PATH
++++ prepend_path /opt/intel/oneapi/tbb/2021.13/env/../lib/pkgconfig /opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
++++ path_to_add=/opt/intel/oneapi/tbb/2021.13/env/../lib/pkgconfig
++++ path_is_now=/opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
++++ &apos;[&apos; &apos;&apos; = /opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig: &apos;]&apos;
++++ printf %s /opt/intel/oneapi/tbb/2021.13/env/../lib/pkgconfig:/opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ PKG_CONFIG_PATH=/opt/intel/oneapi/tbb/2021.13/env/../lib/pkgconfig:/opt/intel/oneapi/compiler/2024.2/lib/pkgconfig:/opt/intel/oneapi/mkl/2024.2/lib/pkgconfig:
+++ export PKG_CONFIG_PATH
++ . /root/miniconda3/etc/profile.d/conda.sh
+++ export CONDA_EXE=/root/miniconda3/bin/conda
+++ CONDA_EXE=/root/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/root/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/root/miniconda3/bin/python
+++ &apos;[&apos; -z x &apos;]&apos;
++ conda activate stylegan3
++ local cmd=activate
++ case &quot;$cmd&quot; in
++ __conda_activate activate stylegan3
++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate stylegan3
+++ /root/miniconda3/bin/conda shell.posix activate stylegan3
++ ask_conda=&apos;PS1=&apos;\&apos;&apos;(stylegan3) &apos;\&apos;&apos;
+export PATH=&apos;\&apos;&apos;/opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin:/root/miniconda3/envs/stylegan3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&apos;\&apos;&apos;
+export CONDA_PREFIX=&apos;\&apos;&apos;/root/miniconda3/envs/stylegan3&apos;\&apos;&apos;
+export CONDA_SHLVL=&apos;\&apos;&apos;2&apos;\&apos;&apos;
+export CONDA_DEFAULT_ENV=&apos;\&apos;&apos;stylegan3&apos;\&apos;&apos;
+export CONDA_PROMPT_MODIFIER=&apos;\&apos;&apos;(stylegan3) &apos;\&apos;&apos;
+export CONDA_PREFIX_1=&apos;\&apos;&apos;/root/miniconda3&apos;\&apos;&apos;
+export CONDA_EXE=&apos;\&apos;&apos;/root/miniconda3/bin/conda&apos;\&apos;&apos;
+export _CE_M=&apos;\&apos;&apos;&apos;\&apos;&apos;
+export _CE_CONDA=&apos;\&apos;&apos;&apos;\&apos;&apos;
+export CONDA_PYTHON_EXE=&apos;\&apos;&apos;/root/miniconda3/bin/python&apos;\&apos;&apos;
+. &quot;/root/miniconda3/envs/stylegan3/etc/conda/activate.d/libglib_activate.sh&quot;&apos;
++ eval &apos;PS1=&apos;\&apos;&apos;(stylegan3) &apos;\&apos;&apos;
+export PATH=&apos;\&apos;&apos;/opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin:/root/miniconda3/envs/stylegan3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&apos;\&apos;&apos;
+export CONDA_PREFIX=&apos;\&apos;&apos;/root/miniconda3/envs/stylegan3&apos;\&apos;&apos;
+export CONDA_SHLVL=&apos;\&apos;&apos;2&apos;\&apos;&apos;
+export CONDA_DEFAULT_ENV=&apos;\&apos;&apos;stylegan3&apos;\&apos;&apos;
+export CONDA_PROMPT_MODIFIER=&apos;\&apos;&apos;(stylegan3) &apos;\&apos;&apos;
+export CONDA_PREFIX_1=&apos;\&apos;&apos;/root/miniconda3&apos;\&apos;&apos;
+export CONDA_EXE=&apos;\&apos;&apos;/root/miniconda3/bin/conda&apos;\&apos;&apos;
+export _CE_M=&apos;\&apos;&apos;&apos;\&apos;&apos;
+export _CE_CONDA=&apos;\&apos;&apos;&apos;\&apos;&apos;
+export CONDA_PYTHON_EXE=&apos;\&apos;&apos;/root/miniconda3/bin/python&apos;\&apos;&apos;
+. &quot;/root/miniconda3/envs/stylegan3/etc/conda/activate.d/libglib_activate.sh&quot;&apos;
+++ PS1=&apos;(stylegan3) &apos;
+++ export PATH=/opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin:/root/miniconda3/envs/stylegan3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/intel/oneapi/compiler/2024.2/bin:/opt/intel/oneapi/mkl/2024.2/bin:/root/miniconda3/envs/stylegan3/bin:/root/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/root/miniconda3/envs/stylegan3
+++ CONDA_PREFIX=/root/miniconda3/envs/stylegan3
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=stylegan3
+++ CONDA_DEFAULT_ENV=stylegan3
+++ export &apos;CONDA_PROMPT_MODIFIER=(stylegan3) &apos;
+++ CONDA_PROMPT_MODIFIER=&apos;(stylegan3) &apos;
+++ export CONDA_PREFIX_1=/root/miniconda3
+++ CONDA_PREFIX_1=/root/miniconda3
+++ export CONDA_EXE=/root/miniconda3/bin/conda
+++ CONDA_EXE=/root/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/root/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/root/miniconda3/bin/python
+++ . /root/miniconda3/envs/stylegan3/etc/conda/activate.d/libglib_activate.sh
++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ export GSETTINGS_SCHEMA_DIR=/root/miniconda3/envs/stylegan3/share/glib-2.0/schemas
++++ GSETTINGS_SCHEMA_DIR=/root/miniconda3/envs/stylegan3/share/glib-2.0/schemas
++ __conda_hashr
++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++ &apos;[&apos; -n &apos;&apos; &apos;]&apos;
++ hash -r
++++ readlink -f ./bench3.sh
+++ dirname /tmp/stylegan3/bench3.sh
++ cd /tmp/stylegan3
++ export DNNLIB_CACHE_DIR=/root/.cache/dnnlib
++ DNNLIB_CACHE_DIR=/root/.cache/dnnlib
++ export IMAGEIO_FFMPEG_EXE=/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux64-v4.2.2
++ IMAGEIO_FFMPEG_EXE=/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux64-v4.2.2
++ OUT_DIR=/tmp
++ FRAME_COUNT=32
++ profile python gen_video.py --output=/tmp/benchmark3r.mp4 --trunc=1 --seeds=2,5 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl --preheat=True
++ date --iso-8601=seconds
++ tr &apos;\n&apos; &apos; &apos;
++ hostname
++ git describe --all --long --dirty
++ python gen_video.py --output=/tmp/benchmark3r.mp4 --trunc=1 --seeds=2,5 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl --preheat=True
++ tee /dev/fd/63
+++ fgrep &apos;min/mean/median/max rate&apos;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: &apos;libjpeg.so.8: cannot open shared object file: No such file or directory&apos;If you don&apos;t plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version &gt;=1.16.5 and &lt;1.23.0 is required for this version of SciPy (detected version 1.24.3
+  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:465: UserWarning: Conv BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:472: UserWarning: Linear BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torch/autograd/profiler.py:265: UserWarning: CUDA is not available, disabling CUDA profiling
+  warn(&quot;CUDA is not available, disabling CUDA profiling&quot;)
+STAGE:2024-10-29 15:26:53 26460:26460 XPUActivityProfilerController.cpp:271] Completed Stage: Warm Up
+Loading networks from &quot;https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl&quot;...
+allow_module_rebuild = True -&gt; this would significantly slow down or freeze profiling!
+Setting up PyTorch plugin &quot;bias_act_plugin&quot;... CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/bias_act_plugin/5293f9fcfed68a6b763d8bc09debca4c-intel-r--arc-tm--a770-graphics
+Done.
+stylegan3-r-afhqv2-512x512.pkl:   0%|                                                                                                                                                | 0/64 [00:00&lt;?, ?it/s]CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/filtered_lrelu_plugin/9c21854bcfe7a78ecaeed8c7470b2fc4-intel-r--arc-tm--a770-graphics
+Done.
+preheat: True
+stylegan3-r-afhqv2-512x512.pkl: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [00:08&lt;00:00,  7.39it/s]
+STAGE:2024-10-29 15:29:30 26460:26460 XPUActivityProfilerController.cpp:278] Completed Stage: Collection
+STAGE:2024-10-29 15:29:30 26460:26460 XPUActivityProfilerController.cpp:281] Completed Stage: Post Processing
+stylegan3-r-afhqv2-512x512.pkl min/mean/median/max rate: 5.36 7.40 7.44 7.47 it/s
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                       model_inference        82.76%      129.931s       100.00%      156.996s      156.996s             1  
+                      aten::lift_fresh         0.00%      78.000us         0.00%      78.000us       1.182us            66  
+                              aten::to         0.00%       1.016ms         0.03%      42.072ms       3.706us         11351  
+                        aten::_to_copy         0.00%       2.701ms         0.03%      41.714ms     159.824us           261  
+                   aten::empty_strided         0.00%       1.193ms         0.00%       1.193ms       4.536us           263  
+                           aten::copy_         0.04%      61.945ms         0.04%      61.945ms      52.230us          1186  
+                          aten::square         0.00%       6.269ms         0.03%      46.965ms      16.937us          2773  
+                             aten::pow         0.03%      47.125ms         0.05%      81.345ms      14.667us          5546  
+                     aten::result_type         0.00%      15.000us         0.00%      15.000us       0.003us          5546  
+                           aten::empty         0.01%      15.016ms         0.01%      15.016ms       0.648us         23170  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 156.996s
+
++ profile python gen_video.py --output=/tmp/benchmark3t.mp4 --trunc=1 --seeds=2,5 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl --preheat=True
++ date --iso-8601=seconds
++ tr &apos;\n&apos; &apos; &apos;
++ hostname
++ git describe --all --long --dirty
++ python gen_video.py --output=/tmp/benchmark3t.mp4 --trunc=1 --seeds=2,5 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl --preheat=True
++ tee /dev/fd/63
+++ fgrep &apos;min/mean/median/max rate&apos;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: &apos;libjpeg.so.8: cannot open shared object file: No such file or directory&apos;If you don&apos;t plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version &gt;=1.16.5 and &lt;1.23.0 is required for this version of SciPy (detected version 1.24.3
+  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:465: UserWarning: Conv BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:472: UserWarning: Linear BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torch/autograd/profiler.py:265: UserWarning: CUDA is not available, disabling CUDA profiling
+  warn(&quot;CUDA is not available, disabling CUDA profiling&quot;)
+STAGE:2024-10-29 15:29:39 42236:42236 XPUActivityProfilerController.cpp:271] Completed Stage: Warm Up
+Loading networks from &quot;https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-t-afhqv2-512x512.pkl&quot;...
+allow_module_rebuild = True -&gt; this would significantly slow down or freeze profiling!
+Setting up PyTorch plugin &quot;bias_act_plugin&quot;... CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/bias_act_plugin/5293f9fcfed68a6b763d8bc09debca4c-intel-r--arc-tm--a770-graphics
+Done.
+stylegan3-t-afhqv2-512x512.pkl:   0%|                                                                                                                                                | 0/64 [00:00&lt;?, ?it/s]CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/filtered_lrelu_plugin/9c21854bcfe7a78ecaeed8c7470b2fc4-intel-r--arc-tm--a770-graphics
+Done.
+preheat: True
+stylegan3-t-afhqv2-512x512.pkl: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [00:06&lt;00:00,  9.93it/s]
+STAGE:2024-10-29 15:29:47 42236:42236 XPUActivityProfilerController.cpp:278] Completed Stage: Collection
+STAGE:2024-10-29 15:29:47 42236:42236 XPUActivityProfilerController.cpp:281] Completed Stage: Post Processing
+stylegan3-t-afhqv2-512x512.pkl min/mean/median/max rate: 6.33 9.90 10.03 10.08 it/s
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                       model_inference         7.23%     579.726ms       100.00%        8.019s        8.019s             1  
+                      aten::lift_fresh         0.00%      82.000us         0.00%      82.000us       1.242us            66  
+                              aten::to         0.06%       4.920ms         0.55%      44.031ms       3.879us         11351  
+                        aten::_to_copy         0.02%       1.702ms         0.55%      43.786ms     167.762us           261  
+                   aten::empty_strided         0.01%     908.000us         0.01%     908.000us       3.452us           263  
+                           aten::copy_         0.82%      65.774ms         0.82%      65.774ms      55.459us          1186  
+                          aten::square         0.07%       5.783ms         0.54%      43.099ms      15.542us          2773  
+                             aten::pow         0.54%      43.143ms         0.93%      74.722ms      13.473us          5546  
+                     aten::result_type         0.00%      14.000us         0.00%      14.000us       0.003us          5546  
+                           aten::empty         0.11%       8.801ms         0.11%       8.801ms       0.380us         23170  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 8.019s
+
++ profile python gen_video.py --output=/tmp/benchmark2.mp4 --trunc=1 --seeds=2,10 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-afhqv2-512x512.pkl --preheat=True
++ tr &apos;\n&apos; &apos; &apos;
++ date --iso-8601=seconds
++ hostname
++ git describe --all --long --dirty
++ python gen_video.py --output=/tmp/benchmark2.mp4 --trunc=1 --seeds=2,10 --w-frames=32 --network=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-afhqv2-512x512.pkl --preheat=True
++ tee /dev/fd/63
+++ fgrep &apos;min/mean/median/max rate&apos;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: &apos;libjpeg.so.8: cannot open shared object file: No such file or directory&apos;If you don&apos;t plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version &gt;=1.16.5 and &lt;1.23.0 is required for this version of SciPy (detected version 1.24.3
+  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:465: UserWarning: Conv BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/intel_extension_for_pytorch/frontend.py:472: UserWarning: Linear BatchNorm folding failed during the optimize process.
+  warnings.warn(
+/root/miniconda3/envs/stylegan3/lib/python3.9/site-packages/torch/autograd/profiler.py:265: UserWarning: CUDA is not available, disabling CUDA profiling
+  warn(&quot;CUDA is not available, disabling CUDA profiling&quot;)
+STAGE:2024-10-29 15:29:55 42513:42513 XPUActivityProfilerController.cpp:271] Completed Stage: Warm Up
+Loading networks from &quot;https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-afhqv2-512x512.pkl&quot;...
+allow_module_rebuild = True -&gt; this would significantly slow down or freeze profiling!
+Setting up PyTorch plugin &quot;bias_act_plugin&quot;... CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/bias_act_plugin/5293f9fcfed68a6b763d8bc09debca4c-intel-r--arc-tm--a770-graphics
+Done.
+Setting up PyTorch plugin &quot;upfirdn2d_plugin&quot;... CHECK THE BUILD DIR FOR compile_commands.json: /root/.cache/torch_extensions/py39_xpu/upfirdn2d_plugin/7856b272ac0760a3b342552e412fe270-intel-r--arc-tm--a770-graphics
+Done.
+preheat: True
+stylegan2-afhqv2-512x512.pkl: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [00:02&lt;00:00, 26.66it/s]
+STAGE:2024-10-29 15:33:17 42513:42513 XPUActivityProfilerController.cpp:278] Completed Stage: Collection
+STAGE:2024-10-29 15:33:17 42513:42513 XPUActivityProfilerController.cpp:281] Completed Stage: Post Processing
+stylegan2-afhqv2-512x512.pkl min/mean/median/max rate: 15.05 26.76 27.37 27.49 it/s
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                       model_inference         0.21%     430.140ms       100.00%      202.244s      202.244s             1  
+                      aten::lift_fresh         0.00%      54.000us         0.00%      54.000us       0.818us            66  
+                              aten::to         0.00%       3.391ms         0.02%      39.294ms       4.073us          9647  
+                        aten::_to_copy         0.00%       1.289ms         0.02%      39.035ms     149.559us           261  
+                   aten::empty_strided         0.00%       5.113ms         0.00%       5.113ms       2.861us          1787  
+                           aten::copy_         0.03%      64.310ms         0.03%      64.310ms      81.405us           790  
+                                 input         0.00%      25.000us         0.01%      18.692ms      18.692ms             1  
+                  normalize_2nd_moment         0.00%     178.000us         0.01%      18.667ms      18.667ms             1  
+                          aten::square         0.00%       4.223ms         0.01%      25.660ms      25.893us           991  
+                             aten::pow         0.01%      24.704ms         0.02%      45.111ms      22.760us          1982  
+--------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 202.244s
+
+(base) root@6945826450c4:/tmp/stylegan3# cat /tmp/runs.log 
+2024-10-29T14:43:14+00:00 6945826450c4 stylegan3-r-afhqv2-512x512.pkl min/mean/median/max rate: 5.47 7.41 7.46 7.48 it/s
+2024-10-29T14:46:09+00:00 6945826450c4 stylegan3-t-afhqv2-512x512.pkl min/mean/median/max rate: 6.91 9.93 10.04 10.07 it/s
+2024-10-29T14:46:28+00:00 6945826450c4 stylegan2-afhqv2-512x512.pkl min/mean/median/max rate: 14.80 26.54 27.21 27.43 it/s
+2024-10-29T15:02:42+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan3-r-afhqv2-512x512.pkl min/mean/median/max rate: 5.42 7.38 7.41 7.46 it/s
+2024-10-29T15:03:01+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan3-t-afhqv2-512x512.pkl min/mean/median/max rate: 6.75 9.93 10.05 10.08 it/s
+2024-10-29T15:03:17+00:00 6945826450c4 heads/debug_profiling-0-g9390a36-dirty stylegan2-afhqv2-512x512.pkl min/mean/median/max rate: 15.09 26.77 27.44 27.76 it/s
+2024-10-29T15:26:51+00:00 6945826450c4 heads/debug_profiling-0-g9390a36 stylegan3-r-afhqv2-512x512.pkl min/mean/median/max rate: 5.36 7.40 7.44 7.47 it/s
+2024-10-29T15:29:37+00:00 6945826450c4 heads/debug_profiling-0-g9390a36 stylegan3-t-afhqv2-512x512.pkl min/mean/median/max rate: 6.33 9.90 10.03 10.08 it/s
+2024-10-29T15:29:53+00:00 6945826450c4 heads/debug_profiling-0-g9390a36 stylegan2-afhqv2-512x512.pkl min/mean/median/max rate: 15.05 26.76 27.37 27.49 it/s
+(base) root@6945826450c4:/tmp/stylegan3# 
 </pre>
